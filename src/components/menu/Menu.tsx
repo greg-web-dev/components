@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const BtnContainer = styled.div`
@@ -92,7 +91,7 @@ const MenuArea = styled.ul`
   }
 `;
 
-const MenuLink = styled(Link)`
+const MenuLink = styled.a`
   text-decoration: none;
 `;
 
@@ -114,7 +113,7 @@ const MenuOption = styled.li`
 
 interface MenuProps {
   active: boolean;
-  onClick: () => void;
+  onClick: (menuOption: MenuProps["menuOptions"][number]) => void;
   menuOptions: {
     name: string;
     url: string;
@@ -124,11 +123,20 @@ interface MenuProps {
 export const Menu = (props: MenuProps) => {
   const { active, onClick, menuOptions } = props;
 
+  const onNav = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    menuOption: typeof menuOptions[number]
+  ) => {
+    e.preventDefault();
+
+    onClick(menuOption);
+  };
+
   return (
     <MenuContainer>
       <MenuArea className={`${active ? "active" : "inactive"}`}>
         {menuOptions.map((menuOption) => (
-          <MenuLink to={menuOption.url} onClick={onClick}>
+          <MenuLink onClick={(e) => onNav(e, menuOption)}>
             <MenuOption>{menuOption.name}</MenuOption>
           </MenuLink>
         ))}

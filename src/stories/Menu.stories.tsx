@@ -14,6 +14,7 @@ stories.add("MenuBtn", () => {
 
 stories.add("Menu El", () => {
   const [active, setActive] = useState(false);
+  const [page, setPage] = useState("Home");
 
   const menuOptions = [
     {
@@ -27,32 +28,34 @@ stories.add("Menu El", () => {
   ];
 
   return (
-    <Router>
-      <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100vw",
-          height: "100vh",
-          backgroundColor: "skyblue",
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "skyblue",
+      }}
+    >
+      <Menu
+        active={active}
+        onClick={(menuItem) => {
+          setPage(menuItem.name);
+          setActive(false);
         }}
-      >
-        <Menu
-          active={active}
-          onClick={() => setActive(false)}
-          menuOptions={menuOptions}
-        />
-        <MenuBtn
-          active={active}
-          onClick={() => setActive(!active)}
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            paddingRight: 8,
-          }}
-        />
-      </div>
-    </Router>
+        menuOptions={menuOptions}
+      />
+      <MenuBtn
+        active={active}
+        onClick={() => setActive(!active)}
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          paddingRight: 8,
+        }}
+      />
+      Active Page: {page}
+    </div>
   );
 });
