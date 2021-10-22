@@ -1,6 +1,7 @@
 const path = require("path");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
+const DtsBundleWebpack = require("dts-bundle-webpack");
 
 module.exports = {
   entry: "./src/index.ts",
@@ -48,6 +49,12 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   plugins: [
+    new DtsBundleWebpack({
+      name: "greg-web-components",
+      main: "src/index.d.ts",
+      baseDir: ".",
+      out: "dist/greg-web-components.d.ts",
+    }),
     //   new BundleAnalyzerPlugin()
   ],
 };
