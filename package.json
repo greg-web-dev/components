@@ -1,5 +1,5 @@
 {
-  "name": "@greg-web-dev/greg-web-components",
+  "name": "@greg-web-dev/web-components",
   "version": "1.0.0",
   "description": "React component library for Greg-Web Apps",
   "main": "dist/greg-web-components.js",

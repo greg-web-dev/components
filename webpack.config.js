@@ -50,7 +50,7 @@ module.exports = {
   },
   plugins: [
     new DtsBundleWebpack({
-      name: "@greg-web-dev/greg-web-components",
+      name: "@greg-web-dev/web-components",
       main: "src/index.d.ts",
       baseDir: ".",
       out: "dist/greg-web-components.d.ts",
