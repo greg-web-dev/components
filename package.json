@@ -1,6 +1,6 @@
 {
   "name": "@greg-web-dev/web-components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React component library for Greg-Web Apps",
   "main": "dist/greg-web-components.js",
   "types": "dist/greg-web-components.d.ts",
