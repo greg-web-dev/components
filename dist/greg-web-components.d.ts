@@ -19,7 +19,7 @@ declare module '@greg-web-dev/web-components/src/components/menu/Menu' {
     export const MenuBtn: (props: MenuBtnProps) => JSX.Element;
     interface MenuProps {
         active: boolean;
-        onClick: () => void;
+        onClick: (menuOption: MenuProps["menuOptions"][number]) => void;
         menuOptions: {
             name: string;
             url: string;

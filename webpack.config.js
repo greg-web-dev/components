@@ -55,6 +55,6 @@ module.exports = {
       baseDir: ".",
       out: "dist/greg-web-components.d.ts",
     }),
-    //   new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin(),
   ],
 };

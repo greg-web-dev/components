@@ -8,7 +8,7 @@ interface MenuBtnProps {
 export declare const MenuBtn: (props: MenuBtnProps) => JSX.Element;
 interface MenuProps {
     active: boolean;
-    onClick: () => void;
+    onClick: (menuOption: MenuProps["menuOptions"][number]) => void;
     menuOptions: {
         name: string;
         url: string;
