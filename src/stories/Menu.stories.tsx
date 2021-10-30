@@ -1,6 +1,5 @@
 import { storiesOf } from "@storybook/react";
 import { useState } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import { MenuBtn, Menu } from "../components/menu/Menu";
 
